@@ -74,5 +74,68 @@ This project builds a regression model to predict students' exam scores based on
 
 
 
+# 🛍️ Mall Customer Segmentation
+
+## 🎯 Objective
+Segment mall customers into distinct groups based on their **Annual Income** and **Spending Score** using clustering techniques. This helps businesses understand customer behavior and tailor marketing strategies.
+
+---
+
+## 📊 Dataset
+- **Source**: [Kaggle - Mall Customers Dataset](https://www.kaggle.com/datasets/kryusufkaya/mall-customers-dataset)
+- **Features Used**:
+  - `Annual Income (k$)`
+  - `Spending Score (1-100)`
+
+---
+
+## 🛠️ Tools & Libraries
+- Python 🐍
+- Pandas
+- Matplotlib & Seaborn
+- Scikit-learn
+
+---
+
+## 📌 Project Workflow
+
+### 1. Data Loading & Exploration
+- Loaded CSV using Pandas
+- Explored basic statistics and feature distributions
+
+### 2. Feature Selection
+- Selected `Annual Income` and `Spending Score` for clustering
+
+### 3. Data Scaling
+- Applied `StandardScaler` to normalize features
+
+### 4. Visual Exploration
+- Used scatter plots to visualize customer distribution
+
+### 5. Optimal Cluster Detection
+- Applied **Elbow Method** to find the best number of clusters
+
+### 6. K-Means Clustering
+- Clustered customers into 5 segments
+- Extracted cluster labels and centroids
+
+### 7. Cluster Visualization
+- Plotted clusters in 2D space with distinct colors
+- Highlighted centroids using yellow markers
+
+---
+
+## 🌟 Bonus Tasks
+
+### 🔍 DBSCAN Clustering
+- Applied **DBSCAN** for density-based clustering
+- Detected noise points and non-spherical clusters
+- Evaluated clustering using **Silhouette Score**
+
+### 📊 Spending Score Analysis
+- Calculated **average spending score per cluster**
+- Visualized spending behavior using bar plots
+- Provided insights into which clusters represent high-value customers
+
 
 
