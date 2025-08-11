@@ -138,60 +138,110 @@ Segment mall customers into distinct groups based on their **Annual Income** and
 - Provided insights into which clusters represent high-value customers
 
 
-# 🌲 Forest Cover Type Classification
+# 🏦 Loan Approval Prediction (with SMOTE)
 
-This project uses the [Covertype dataset](https://archive.ics.uci.edu/dataset/31/covertype) from the UCI Machine Learning Repository to predict forest cover types based on cartographic and environmental features. It demonstrates a complete machine learning pipeline including data preprocessing, model training, evaluation, and visualization.
-
----
-
-## 📁 Dataset Overview
-
-- **Source**: UCI Machine Learning Repository  
-- **Instances**: 581,012  
-- **Features**: 54  
-- **Target**: `Cover_Type` (7 forest categories)
-
-Features include:
-- Elevation, slope, aspect
-- Distances to hydrology, roads, fire points
-- Hillshade values
-- Binary indicators for 4 wilderness areas and 40 soil types
+This project builds a machine learning pipeline to predict loan approval decisions based on applicant data. It addresses class imbalance using SMOTE and compares the performance of Logistic Regression and Decision Tree classifiers.
 
 ---
 
-## ⚙️ Project Workflow
+## 📌 Problem Statement
+
+Financial institutions need reliable systems to assess loan applications. This project aims to predict whether a loan should be **approved (`1`)** or **rejected (`0`)** using features such as income, credit history, and education.
+
+---
+
+## 📦 Dataset
+
+- **Source**: Simulated or anonymized loan application data  
+- **Target Variable**: `Loan_Status` (0 = Rejected, 1 = Approved)  
+- **Features Used**:
+  - `ApplicantIncome`
+  - `LoanAmount`
+  - `Credit_History`
+  - `Education`
+  - `Gender`
+  - `Married`
+  - *(Additional features if available)*
+
+---
+
+## 🛠️ Tools & Libraries
+
+- Python 🐍  
+- Pandas, NumPy  
+- Scikit-learn  
+- imbalanced-learn (SMOTE)  
+- Matplotlib, Seaborn  
+- ipywidgets (for interactive GUI)
+
+---
+
+## 📈 Workflow
 
 ### 1. Data Preprocessing
-- Loaded dataset from UCI
-- Handled binary categorical features
+- Handled missing values
+- Encoded categorical variables
+- Scaled numerical features
 - Split into training and test sets
 
-### 2. Model Training
-- Trained two models:
-  - **Random Forest**
-  - **XGBoost**
+### 2. Modeling
+- Trained two classifiers:
+  - Logistic Regression
+  - Decision Tree
+- Applied **SMOTE** to balance training data
 
 ### 3. Evaluation
-- Accuracy and classification report
-- Confusion matrix visualization
-- Feature importance analysis
+- Confusion Matrix
+- Precision, Recall, F1-score
+- Accuracy and class-wise metrics
 
-### 4. Bonus
-- Compared Random Forest vs XGBoost
-- Performed hyperparameter tuning using `GridSearchCV`
+### 4. Bonus: Interactive GUI
+- Built a simple loan prediction interface using `ipywidgets`
+- Users can input features and get real-time predictions
 
 ---
 
 ## 📊 Results
 
-| Model          | Accuracy |
-|----------------|----------|
-| Random Forest  | ~0.94    |
-| XGBoost        | ~0.95    |
-| Tuned RF       | ↑ Improved |
+| Model                  | Accuracy | F1-Score (Approved) |
+|-----------------------|----------|---------------------|
+| Logistic Regression   | 91.3%    | 0.931               |
+| Decision Tree         | 98.4%    | 0.987               |
+| Logistic + SMOTE      | 92.3%    | 0.937               |
+| Decision Tree + SMOTE | 98.0%    | 0.984               |
 
-- XGBoost slightly outperformed Random Forest in accuracy.
-- Feature importance revealed elevation, horizontal distances, and hillshade as key predictors.
+- **SMOTE** improved recall for minority class (rejected loans)
+- **Decision Tree** showed highest accuracy but may overfit
+- **Logistic Regression** offers interpretability and solid performance
+
+---
+
+## 🎯 Bonus Experiments
+
+- Compared models with and without SMOTE
+- Visualized confusion matrices and classification reports
+- Built an interactive predictor using `ipywidgets`
+- Explored feature importance and decision boundaries
+
+---
+
+## 📁 Files
+
+- `loan_data.csv` – Raw dataset  
+- `loan_model.ipynb` – Full notebook with pipeline  
+- `loan_predictor_gui.ipynb` – Interactive GUI using ipywidgets  
+- `README.md` – Project documentation
+
+---
+
+## 🚀 Future Enhancements
+
+- Hyperparameter tuning with GridSearchCV  
+- Add more features (e.g., employment type, dependents)  
+- Deploy as a web app using Streamlit or Flask  
+- Integrate explainability tools like SHAP or LIME
+
+---
 
 
 
