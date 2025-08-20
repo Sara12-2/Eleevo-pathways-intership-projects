@@ -1,3 +1,4 @@
+I have completed 5 projects.
 # 📚 Student Score Prediction
 
 This project builds a regression model to predict students' exam scores based on factors such as study hours, sleep hours, and class participation. It follows the guidelines of Task 1 from the Arch Technologies internship and uses the [Student Performance Factors dataset](https://www.kaggle.com/datasets/lainguyn123/student-performance-factors) from Kaggle.
@@ -242,6 +243,88 @@ Financial institutions need reliable systems to assess loan applications. This p
 - Integrate explainability tools like SHAP or LIME
 
 ---
+# 🏬 Walmart Sales Forecasting  
+
+This project aims to **forecast weekly Walmart sales** using regression techniques on time-series data. The goal is to capture sales trends and predict future values using lag features and date-based attributes.  
+
+---
+
+## 📊 Dataset  
+
+- **Source**: [Walmart Recruiting - Store Sales Forecasting (Kaggle)](https://www.kaggle.com/c/walmart-recruiting-store-sales-forecasting)  
+- **File Used**: `Walmart.csv`  
+- **Key Columns**:  
+  - `Store` → Store ID  
+  - `Dept` → Department ID  
+  - `Date` → Weekly sales date  
+  - `Weekly_Sales` → Target variable (weekly sales amount)  
+  - `IsHoliday` → Whether the week includes a holiday  
+
+---
+
+## 🎯 Project Objectives  
+
+- Perform **data preprocessing** and feature extraction  
+- Create **time-series lag features** to capture past sales trends  
+- Train a **Linear Regression model**  
+- Evaluate using **RMSE** and **R² score**  
+- Visualize **actual vs predicted sales**  
+
+---
+
+## 🛠️ Tools & Libraries  
+
+- Python 🐍  
+- Pandas & NumPy  
+- Matplotlib & Seaborn  
+- Scikit-learn  
+
+---
+
+## 📈 Workflow  
+
+### 1. Data Preprocessing  
+- Convert `Date` column to datetime  
+- Extract `Year`, `Month`, `Week`  
+- Create lag features: `Lag_1`, `Lag_2` (previous sales)  
+- Drop rows with missing values  
+
+### 2. Feature Selection  
+- **Features**: `Year`, `Month`, `Week`, `Lag_1`, `Lag_2`  
+- **Target**: `Weekly_Sales`  
+
+### 3. Train-Test Split  
+- **Time-aware split**: first 80% training, last 20% testing  
+
+### 4. Model Training  
+- Linear Regression applied on features  
+
+### 5. Evaluation  
+- **RMSE**: Root Mean Squared Error  
+- **R²**: Coefficient of determination  
+
+### 6. Visualization  
+- Line plot comparing **actual vs predicted sales** over time  
+
+---
+
+## 📊 Results  
+
+- **RMSE**: Represents the average prediction error  
+- **R² Score**: Closer to 1 indicates stronger predictive performance  
+- Visualization clearly shows predicted trend following actual sales  
+
+---
+
+## 🚀 Future Improvements  
+
+- Implement **ARIMA / SARIMA** for time-series forecasting  
+- Try **Random Forest, XGBoost, or LSTM** for non-linear patterns  
+- Add **holiday, store, and promotion features** for richer insights  
+
+---
+
+👉 This project demonstrates how **time-aware regression models** can forecast retail sales trends and provide insights for **inventory planning & business strategy**.  
 
 
 
